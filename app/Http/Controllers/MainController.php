@@ -35,7 +35,7 @@ class MainController extends Controller
         $user_exists = Leaderboard::where('username', $request->username)->first();
 
         if($user_exists)
-            Leaderboard::find($user_exists->id)->update(['score' => $request->score]);
+            Leaderboard::find($user_exists->id)->update(['score' => $request->score >= $user_exists->score ? $request->score : $user_exists->score]);
         else
             Leaderboard::create($request->all());
 
