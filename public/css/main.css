@@ -25,3 +25,17 @@ body {
 .title {
     font-size: 96px;
 }
+
+.borderless td, .borderless th {
+    border: none !important;
+}
+
+.navigation-menu {
+    font-size: 15px;
+    font-weight: bold;
+    color: grey;
+}
+
+.align {
+    text-align: left;
+}

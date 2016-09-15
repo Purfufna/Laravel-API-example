@@ -14,6 +14,8 @@ class CreateLeaderboardTable extends Migration
     {
         Schema::create('leaderboard', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('username');
+            $table->integer('score');
             $table->timestamps();
         });
     }

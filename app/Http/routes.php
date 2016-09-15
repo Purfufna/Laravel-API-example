@@ -14,5 +14,11 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
 Route::get('/', ['as' => 'index', 'uses' => 'MainController@index']);
-Route::resource('main', 'MainController');
+Route::get('/top/{top}', ['as' => 'getTop', 'uses' => 'MainController@getTop']);
+
+Route::get('/add_score', ['as' => 'getAddScore', 'uses' => 'MainController@getAddScore']);
+Route::post('/add_score', ['as' => 'postAddScore', 'uses' => 'MainController@postAddScore']);
+
+Route::controller('main', 'MainController');
